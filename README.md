@@ -17,6 +17,7 @@ Actors are designed to be highly efficient and can provide excellent performance
 By encapsulating shared mutable state within actors, the code becomes easier to understand and maintain. Actors provide a clear separation of concerns between threads, making it easier to reason about concurrent behavior.
 
 
+## Example:
 In this example, we define a `BankAccount` actor that has a mutable balance property. The actor provides two methods: `deposit` and `withdraw`, which modify the balance property in a thread-safe manner. We then define a `transfer` function that transfers money from one account to another using the withdraw and deposit methods. Finally, we create two tasks that transfer money between the two accounts and print a message when the transfer is complete.
 
 Note that the transfer function uses the `await` keyword to suspend execution until the withdraw method returns. This ensures that the deposit method is not called until the withdrawal is complete, even if the tasks executing the two methods are running concurrently on different threads.
